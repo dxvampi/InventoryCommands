@@ -15,7 +15,7 @@ public class CraftingTableCommand implements CommandExecutor, TabCompleter {
     @Override
     public boolean onCommand(@NonNull CommandSender sender, @NonNull Command command, @NonNull String label, String @NonNull [] args) {
         if(!(sender instanceof Player p)) {
-            CommandErrors.raiseConsoleError(sender, label, args);
+            CommandErrors.raiseConsoleError(sender, label);
             return true;
         }
 
