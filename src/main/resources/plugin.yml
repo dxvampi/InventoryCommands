@@ -1,0 +1,5 @@
+name: Inventory Commands
+version: '${version}'
+
+main: ic.dxvampi.inventoryCommands.InventoryCommands
+api-version: '1.18'
