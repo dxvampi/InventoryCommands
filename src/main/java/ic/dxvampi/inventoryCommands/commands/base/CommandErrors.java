@@ -13,10 +13,14 @@ public class CommandErrors {
         for (String arg : args) {
             arguments.append(arg).append(" ");
         }
-        sender.sendMessage(MessageUtils.getColored("&cInvalid usage: &7/" + label + " " + arguments + "&c Usage: &7" + usage));
+        sender.sendMessage(MessageUtils.getColored("&cInvalid usage: &7/" + label + " " + arguments + "&c! Usage: &7" + usage));
     }
 
     public static void raiseInvalidPlayer(CommandSender sender, String player) {
         sender.sendMessage(MessageUtils.getColored("&cPlayer &7" + player + " &c does not exist or is offline!"));
+    }
+
+    public static void raiseNoPermissionOthers(CommandSender sender, String label) {
+        sender.sendMessage(MessageUtils.getColored("&cYou do not have permission to use &7/" + label + "&c on others!"));
     }
 }
