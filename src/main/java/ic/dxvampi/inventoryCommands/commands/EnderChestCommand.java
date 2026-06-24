@@ -9,6 +9,7 @@ import org.bukkit.command.TabCompleter;
 import org.bukkit.entity.Player;
 import org.checkerframework.checker.nullness.qual.NonNull;
 
+import java.util.ArrayList;
 import java.util.List;
 
 public class EnderChestCommand implements CommandExecutor, TabCompleter {
@@ -42,6 +43,15 @@ public class EnderChestCommand implements CommandExecutor, TabCompleter {
 
     @Override
     public List<String> onTabComplete(@NonNull CommandSender sender, @NonNull Command command, @NonNull String label, String @NonNull [] args) {
-        return List.of();
+        if (args.length != 1) {
+            return List.of();
+        }
+        List<String> completions = new ArrayList<>();
+        for (Player player : Bukkit.getOnlinePlayers()) {
+            if (player.getName().toLowerCase().startsWith(args[0])) {
+                completions.add(player.getName());
+            }
+        }
+        return completions;
     }
 }
