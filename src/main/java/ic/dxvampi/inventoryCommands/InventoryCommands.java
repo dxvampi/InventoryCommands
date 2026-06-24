@@ -1,13 +1,20 @@
 package ic.dxvampi.inventoryCommands;
 
+import ic.dxvampi.inventoryCommands.commands.CraftingTableCommand;
+import ic.dxvampi.inventoryCommands.utils.MessageUtils;
+import org.bukkit.Bukkit;
 import org.bukkit.plugin.java.JavaPlugin;
 
+import java.util.Objects;
+
 public final class InventoryCommands extends JavaPlugin {
+
+    private final String version = getDescription().getVersion();
 
     @Override
     public void onEnable() {
         registerCommands();
-
+        Bukkit.getConsoleSender().sendMessage(MessageUtils.getColored("&aInventoryCommands has been enabled! &7Version: " + version));
     }
 
     @Override
@@ -16,6 +23,13 @@ public final class InventoryCommands extends JavaPlugin {
     }
 
     private void registerCommands() {
-        assert true;
+
+        // /craftingtable
+
+        CraftingTableCommand craftingTableCommand = new CraftingTableCommand();
+        Objects.requireNonNull(this.getCommand("craftingtable")).setExecutor(craftingTableCommand);
+        Objects.requireNonNull(this.getCommand("craftingtable")).setTabCompleter(craftingTableCommand);
+
+        // /enderchest
     }
 }

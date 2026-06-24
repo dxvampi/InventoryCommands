@@ -1,26 +1,30 @@
 package ic.dxvampi.inventoryCommands.commands;
 
+import ic.dxvampi.inventoryCommands.commands.base.CommandErrors;
 import org.bukkit.command.Command;
 import org.bukkit.command.CommandExecutor;
 import org.bukkit.command.CommandSender;
 import org.bukkit.command.TabCompleter;
 import org.bukkit.entity.Player;
+import org.checkerframework.checker.nullness.qual.NonNull;
 
 import java.util.List;
 
 public class CraftingTableCommand implements CommandExecutor, TabCompleter {
 
     @Override
-    public boolean onCommand(CommandSender sender, Command command, String label, String[] args) {
+    public boolean onCommand(@NonNull CommandSender sender, @NonNull Command command, @NonNull String label, String @NonNull [] args) {
         if(!(sender instanceof Player p)) {
+            CommandErrors.raiseConsoleError(sender, label, args);
             return true;
         }
 
+        p.openWorkbench(null, true);
         return true;
     }
 
     @Override
-    public List<String> onTabComplete(CommandSender sender, Command command, String label, String[] args) {
+    public List<String> onTabComplete(@NonNull CommandSender sender, @NonNull Command command, @NonNull String label, String @NonNull [] args) {
         return List.of();
     }
 }
