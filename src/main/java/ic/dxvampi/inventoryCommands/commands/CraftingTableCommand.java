@@ -19,6 +19,11 @@ public class CraftingTableCommand implements CommandExecutor, TabCompleter {
             return true;
         }
 
+        if (args.length != 0) {
+            CommandErrors.raiseInvalidUsage(sender, label, args, "/" + label);
+            return true;
+        }
+
         p.openWorkbench(null, true);
         return true;
     }
