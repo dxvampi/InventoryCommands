@@ -31,6 +31,11 @@ public class EnderChestCommand implements CommandExecutor, TabCompleter {
             return true;
         }
 
+        if (!sender.hasPermission("inventorycommands.enderchest.others")) {
+            CommandErrors.raiseNoPermissionOthers(sender, label);
+            return true;
+        }
+
         Player target = Bukkit.getPlayer(args[0]);
         if (target == null) {
             CommandErrors.raiseInvalidPlayer(sender, args[0]);
