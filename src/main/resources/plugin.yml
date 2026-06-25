@@ -47,6 +47,14 @@ commands:
     usage: "/<command>"
     permission: inventorycommands.anvil
 
+  inventorycommands:
+    description: "Main command"
+    usage: "/<command> <reload>"
+    permission: inventorycommands.maincommand
+    aliases:
+      - invcmd
+      - invcmds
+
 permissions:
 
   # /craftingtable
@@ -81,4 +89,14 @@ permissions:
 
   inventorycommands.anvil:
     description: "Allows opening an anvil"
+    default: op
+
+  # /inventorycommands
+
+  inventorycommands.maincommand:
+    description: "Allows running /inventorycommands"
+    default: op
+
+  inventorycommand.maincommand.reload:
+    description: "Allows reloading the config"
     default: op

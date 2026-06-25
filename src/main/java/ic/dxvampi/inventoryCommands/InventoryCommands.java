@@ -1,6 +1,7 @@
 package ic.dxvampi.inventoryCommands;
 
 import ic.dxvampi.inventoryCommands.commands.*;
+import ic.dxvampi.inventoryCommands.commands.maincommand.MainCommand;
 import ic.dxvampi.inventoryCommands.utils.MessageUtils;
 import ic.dxvampi.inventoryCommands.utils.PluginUtils;
 import ic.dxvampi.inventoryCommands.utils.UpdateChecker;
@@ -42,6 +43,8 @@ public final class InventoryCommands extends JavaPlugin {
         PluginUtils.registerCommand("trash", new TrashCommand(this), this);
 
         PluginUtils.registerCommand("anvil", new AnvilCommand(), this);
+
+        PluginUtils.registerCommand("inventorycommands", new MainCommand(this), this);
 
     }
 

@@ -26,4 +26,8 @@ public class CommandErrors {
     public static void raiseNoPermissionOthers(CommandSender sender, String label) {
         sender.sendMessage(MessageUtils.getComponent("&cYou do not have permission to use &7/" + label + "&c on others!"));
     }
+
+    public static void raiseNoPermission(CommandSender sender, String label, String[] args) {
+        sender.sendMessage(MessageUtils.getComponent("&cYou do not have permission to use &7/" + label + " " + args[0] + "&c on others!"));
+    }
 }
