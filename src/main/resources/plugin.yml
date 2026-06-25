@@ -1,5 +1,7 @@
 name: InventoryCommands
 version: '${version}'
+description: This plugins adds useful Inventory-Related commands
+author: dxvampi
 
 main: ic.dxvampi.inventoryCommands.InventoryCommands
 api-version: '1.18'
