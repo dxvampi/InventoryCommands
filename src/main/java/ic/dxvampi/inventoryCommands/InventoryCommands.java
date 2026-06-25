@@ -18,12 +18,12 @@ public final class InventoryCommands extends JavaPlugin {
         saveDefaultConfig();
         registerCommands();
         updateChecker.checkForUpdates();
-        Bukkit.getConsoleSender().sendMessage(MessageUtils.getColored(prefix + "&aInventoryCommands has been enabled! &7Version: " + version));
+        Bukkit.getConsoleSender().sendMessage(MessageUtils.getComponent(prefix + "&aInventoryCommands has been enabled! &7Version: " + version));
     }
 
     @Override
     public void onDisable() {
-        Bukkit.getConsoleSender().sendMessage(MessageUtils.getColored(prefix + "&cInventoryCommands has been disabled!"));
+        Bukkit.getConsoleSender().sendMessage(MessageUtils.getComponent(prefix + "&cInventoryCommands has been disabled!"));
     }
 
     private void registerCommands() {

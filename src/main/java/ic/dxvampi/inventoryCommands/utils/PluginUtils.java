@@ -17,9 +17,9 @@ public class PluginUtils {
                 if (executor instanceof TabCompleter tc) {
                     cmd.setTabCompleter(tc);
                 }
-                Bukkit.getConsoleSender().sendMessage(MessageUtils.getColored(plugin.getPrefix() + "&aCommand '" + command + "' is enabled!"));
+                Bukkit.getConsoleSender().sendMessage(MessageUtils.getComponent(plugin.getPrefix() + "&aCommand '" + command + "' is enabled!"));
             } else {
-                Bukkit.getConsoleSender().sendMessage(MessageUtils.getColored(plugin.getPrefix() + "&cCommand '" + command + "' specified on config.yml does not exist!"));
+                Bukkit.getConsoleSender().sendMessage(MessageUtils.getComponent(plugin.getPrefix() + "&cCommand '" + command + "' specified on config.yml does not exist!"));
             }
 
         } else {
@@ -27,9 +27,9 @@ public class PluginUtils {
             var cmd = commandMap.getCommand(command);
             if (cmd != null) {
                 cmd.unregister(commandMap);
-                Bukkit.getConsoleSender().sendMessage(MessageUtils.getColored(plugin.getPrefix() + "&cCommand '" + command + "' is disabled!"));
+                Bukkit.getConsoleSender().sendMessage(MessageUtils.getComponent(plugin.getPrefix() + "&cCommand '" + command + "' is disabled!"));
             } else {
-                Bukkit.getConsoleSender().sendMessage(MessageUtils.getColored(plugin.getPrefix() + "&cCommand '" + command + "' specified on config.yml does not exist!"));
+                Bukkit.getConsoleSender().sendMessage(MessageUtils.getComponent(plugin.getPrefix() + "&cCommand '" + command + "' specified on config.yml does not exist!"));
             }
         }
     }

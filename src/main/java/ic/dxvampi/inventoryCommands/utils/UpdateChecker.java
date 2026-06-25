@@ -21,7 +21,7 @@ public class UpdateChecker {
                 return reader.readLine().trim();
             }
         } catch (Exception e) {
-            Bukkit.getConsoleSender().sendMessage(MessageUtils.getColored(plugin.getPrefix() + "&cCould not get latest version! &7Current: " + plugin.getDescription().getVersion()));
+            Bukkit.getConsoleSender().sendMessage(MessageUtils.getComponent(plugin.getPrefix() + "&cCould not get latest version! &7Current: " + plugin.getDescription().getVersion()));
             return plugin.getDescription().getVersion();
         }
     }
@@ -32,8 +32,8 @@ public class UpdateChecker {
             String currentVersion = plugin.getDescription().getVersion();
 
             if (!currentVersion.equalsIgnoreCase(latest)) {
-                Bukkit.getConsoleSender().sendMessage(MessageUtils.getColored(plugin.getPrefix() + "&aNew version available &7(" + latest + ")&a. Current is: &7" + currentVersion));
-                Bukkit.getConsoleSender().sendMessage(MessageUtils.getColored(plugin.getPrefix() + "&aUpdate on: https://github.com/dxvampi/InventoryCommands/releases/latest"));
+                Bukkit.getConsoleSender().sendMessage(MessageUtils.getComponent(plugin.getPrefix() + "&aNew version available &7(" + latest + ")&a. Current is: &7" + currentVersion));
+                Bukkit.getConsoleSender().sendMessage(MessageUtils.getComponent(plugin.getPrefix() + "&aUpdate on: https://github.com/dxvampi/InventoryCommands/releases/latest"));
             }
         });
     }
