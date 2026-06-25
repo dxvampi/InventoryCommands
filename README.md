@@ -25,6 +25,8 @@ This plugin provides access to specific inventories. Here is how each command wo
 * **Aliases:** `/dispose`, `/garbage`
 * **Description:** Opens a temporal trash bin. Dump all your unwanted cobblestone, dirt, or whatever inside, close the GUI, and it will be deleted forever.
 
+### `/anvil`
+* **Description:** Opens the anvil GUI. Useful for enchanting or renaming items on the go
 ---
 
 ## Permissions
