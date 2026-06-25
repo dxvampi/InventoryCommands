@@ -16,7 +16,7 @@ import java.util.List;
 
 public class MainCommand implements CommandExecutor, TabCompleter {
 
-    private InventoryCommands plugin;
+    private final InventoryCommands plugin;
     public MainCommand(InventoryCommands plugin) {
         this.plugin = plugin;
     }
@@ -46,6 +46,14 @@ public class MainCommand implements CommandExecutor, TabCompleter {
         completions.add("reload");
         if (args.length == 1) {
             return completions;
+        }
+        if (args.length > 2) {
+            switch(args[0]) {
+                case "reload":
+                    return new ReloadSubCommand(plugin, sender, command, label, args).onTabComplete();
+                default:
+                    break;
+            }
         }
         return List.of();
     }
