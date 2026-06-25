@@ -16,13 +16,7 @@ public class CommandTabListener implements Listener {
     @EventHandler
     public void onCommandSend(PlayerCommandSendEvent event) {
 
-        for (String command : event.getCommands().toArray(new String[0])) {
-
-            if (!plugin.getConfig().getBoolean("command." + command, true)) {
-                event.getCommands().remove(command);
-            }
-
-        }
+        event.getCommands().removeIf(command -> !plugin.getConfig().getBoolean("command." + command, true));
     }
 
 }
