@@ -16,8 +16,13 @@ public final class InventoryCommands extends JavaPlugin {
     @Override
     public void onEnable() {
         saveDefaultConfig();
+        getConfig().options().copyDefaults(true);
+        saveConfig();
+
         registerCommands();
+
         if (getConfig().getBoolean("update-check", true)) updateChecker.checkForUpdates();
+
         Bukkit.getConsoleSender().sendMessage(MessageUtils.getComponent(PREFIX + "&aInventoryCommands has been enabled! &7Version: " + version));
     }
 

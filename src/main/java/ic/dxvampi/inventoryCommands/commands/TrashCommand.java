@@ -24,8 +24,9 @@ public class TrashCommand extends BaseCommand {
         }
 
         int rows = plugin.getConfig().getInt("trash-gui.rows");
+        int slots = rows * 9;
 
-        Inventory trashInventory = Bukkit.createInventory(null, rows * 5, Component.text("Trash"));
+        Inventory trashInventory = Bukkit.createInventory(null, slots, Component.text("Trash"));
         player.openInventory(trashInventory);
         return true;
     }
