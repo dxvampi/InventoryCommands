@@ -41,7 +41,8 @@ public class InvSeeCommand implements CommandExecutor, TabCompleter {
         }
         List<String> completions = new ArrayList<>();
         for (Player player : Bukkit.getOnlinePlayers()) {
-            if (player.getName().toLowerCase().startsWith(args[0])) {
+            if (player.hasMetadata("vanished")) continue;
+            if (player.getName().toLowerCase().startsWith(args[0].toLowerCase())) {
                 completions.add(player.getName());
             }
         }
