@@ -33,14 +33,14 @@ This plugin provides access to specific inventories. Here is how each command wo
 
 All permissions default to **OP**, keeping your server secure. Give these to your player ranks or VIPs as you see fit.
 
-| Command / Feature      | Permission Node                       | Default | Description                                                        |
-|:-----------------------|:--------------------------------------|:--------|:-------------------------------------------------------------------|
-| `/craftingtable`       | `inventorycommands.craftingtable`     | OP      | Allows the player to open the virtual crafting table.              |
-| `/enderchest`          | `inventorycommands.enderchest`        | OP      | Allows the player to open their own virtual ender chest.           |
-| `/enderchest <player>` | `inventorycommands.enderchest.others` | OP      | Allows the player to open and manage another player's ender chest. |
-| `/invsee <player>`     | `inventorycommands.invsee`            | OP      | Allows inspecting and interacting with another player's inventory. |
-| `/trash`               | `inventorycommands.trash`             | OP      | Allows the player to open the virtual trash bin.                   |
-| `/anvil`               | `inventorycommands.anvil`             | OP      | Allows the player to open the anvil GUI                            |
+| Command / Feature      | Permission Node                       | Default | Description                                                        | Version |
+|:-----------------------|:--------------------------------------|:--------|:-------------------------------------------------------------------|---------|
+| `/craftingtable`       | `inventorycommands.craftingtable`     | OP      | Allows the player to open the virtual crafting table.              | 1.0+    |
+| `/enderchest`          | `inventorycommands.enderchest`        | OP      | Allows the player to open their own virtual ender chest.           | 1.0+    |  
+| `/enderchest <player>` | `inventorycommands.enderchest.others` | OP      | Allows the player to open and manage another player's ender chest. | 1.0+    |
+| `/invsee <player>`     | `inventorycommands.invsee`            | OP      | Allows inspecting and interacting with another player's inventory. | 1.0+    |
+| `/trash`               | `inventorycommands.trash`             | OP      | Allows the player to open the virtual trash bin.                   | 1.0+    | 
+| `/anvil`               | `inventorycommands.anvil`             | OP      | Allows the player to open the anvil GUI                            | 1.1+    |
 ---
 
 ## Installation

@@ -1,0 +1,6 @@
+commands: # Here you can disable commands that you don't want to use
+  craftingtable: true
+  enderchest: true
+  invsee: true
+  trash: true
+  anvil: true

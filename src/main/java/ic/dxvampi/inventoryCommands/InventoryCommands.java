@@ -2,55 +2,56 @@ package ic.dxvampi.inventoryCommands;
 
 import ic.dxvampi.inventoryCommands.commands.*;
 import ic.dxvampi.inventoryCommands.utils.MessageUtils;
+import ic.dxvampi.inventoryCommands.utils.PluginUtils;
+import ic.dxvampi.inventoryCommands.utils.UpdateChecker;
 import org.bukkit.Bukkit;
 import org.bukkit.plugin.java.JavaPlugin;
-
-import java.util.Objects;
 
 public final class InventoryCommands extends JavaPlugin {
 
     private final String version = getDescription().getVersion();
+    private final UpdateChecker updateChecker = new UpdateChecker(this);
+    private final String prefix = "&7&l[&r&aInventoryCommands&7&l] &r";
 
     @Override
     public void onEnable() {
+        saveDefaultConfig();
         registerCommands();
-        Bukkit.getConsoleSender().sendMessage(MessageUtils.getColored("&aInventoryCommands has been enabled! &7Version: " + version));
+        updateChecker.checkForUpdates();
+        Bukkit.getConsoleSender().sendMessage(MessageUtils.getColored(prefix + "&aInventoryCommands has been enabled! &7Version: " + version));
     }
 
     @Override
     public void onDisable() {
-        Bukkit.getConsoleSender().sendMessage(MessageUtils.getColored("&cInventoryCommands has been disabled!"));
+        Bukkit.getConsoleSender().sendMessage(MessageUtils.getColored(prefix + "&cInventoryCommands has been disabled!"));
     }
 
     private void registerCommands() {
 
         // /craftingtable
 
-        CraftingTableCommand craftingTableCommand = new CraftingTableCommand();
-        Objects.requireNonNull(this.getCommand("craftingtable")).setExecutor(craftingTableCommand);
-        Objects.requireNonNull(this.getCommand("craftingtable")).setTabCompleter(craftingTableCommand);
+        PluginUtils.registerCommand("craftingtable", new CraftingTableCommand(), this);
 
         // /enderchest
 
-        EnderChestCommand enderChestCommand = new EnderChestCommand();
-        Objects.requireNonNull(this.getCommand("enderchest")).setExecutor(enderChestCommand);
-        Objects.requireNonNull(this.getCommand("enderchest")).setTabCompleter(enderChestCommand);
+        PluginUtils.registerCommand("enderchest", new EnderChestCommand(), this);
 
         // /invsee
 
-        InvSeeCommand invSeeCommand = new InvSeeCommand();
-        Objects.requireNonNull(this.getCommand("invsee")).setExecutor(invSeeCommand);
-        Objects.requireNonNull(this.getCommand("invsee")).setTabCompleter(invSeeCommand);
+        PluginUtils.registerCommand("invsee", new InvSeeCommand(), this);
 
         // /trash
 
-        TrashCommand trashCommand = new TrashCommand();
-        Objects.requireNonNull(this.getCommand("trash")).setExecutor(trashCommand);
-        Objects.requireNonNull(this.getCommand("trash")).setTabCompleter(trashCommand);
+        PluginUtils.registerCommand("trash", new TrashCommand(), this);
 
         // /anvil
-        AnvilCommand anvilCommand = new AnvilCommand();
-        Objects.requireNonNull(this.getCommand("anvil")).setExecutor(anvilCommand);
-        Objects.requireNonNull(this.getCommand("anvil")).setTabCompleter(anvilCommand);
+
+        PluginUtils.registerCommand("anvil", new AnvilCommand(), this);
+
     }
+
+    public String getPrefix() {
+        return prefix;
+    }
+
 }
