@@ -11,18 +11,19 @@ public final class InventoryCommands extends JavaPlugin {
 
     private final String version = getDescription().getVersion();
     private final UpdateChecker updateChecker = new UpdateChecker(this);
+    private final String prefix = "&7&l[&r&aInventoryCommands&7&l] &r";
 
     @Override
     public void onEnable() {
         saveDefaultConfig();
         registerCommands();
         updateChecker.checkForUpdates();
-        Bukkit.getConsoleSender().sendMessage(MessageUtils.getColored("&aInventoryCommands has been enabled! &7Version: " + version));
+        Bukkit.getConsoleSender().sendMessage(MessageUtils.getColored(prefix + "&aInventoryCommands has been enabled! &7Version: " + version));
     }
 
     @Override
     public void onDisable() {
-        Bukkit.getConsoleSender().sendMessage(MessageUtils.getColored("&cInventoryCommands has been disabled!"));
+        Bukkit.getConsoleSender().sendMessage(MessageUtils.getColored(prefix + "&cInventoryCommands has been disabled!"));
     }
 
     private void registerCommands() {
@@ -47,6 +48,10 @@ public final class InventoryCommands extends JavaPlugin {
 
         PluginUtils.registerCommand("anvil", new AnvilCommand(), this);
 
+    }
+
+    public String getPrefix() {
+        return prefix;
     }
 
 }
