@@ -15,6 +15,7 @@ public final class InventoryCommands extends JavaPlugin {
     public void onEnable() {
         saveDefaultConfig();
         registerCommands();
+        registerListeners();
         Bukkit.getConsoleSender().sendMessage(MessageUtils.getColored("&aInventoryCommands has been enabled! &7Version: " + version));
     }
 
