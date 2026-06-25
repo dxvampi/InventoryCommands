@@ -11,47 +11,37 @@ public final class InventoryCommands extends JavaPlugin {
 
     private final String version = getDescription().getVersion();
     private final UpdateChecker updateChecker = new UpdateChecker(this);
-    private final String prefix = "&7&l[&r&aInventoryCommands&7&l] &r";
+    private static final String PREFIX = "&7&l[&r&aInventoryCommands&7&l] &r";
 
     @Override
     public void onEnable() {
         saveDefaultConfig();
         registerCommands();
         updateChecker.checkForUpdates();
-        Bukkit.getConsoleSender().sendMessage(MessageUtils.getComponent(prefix + "&aInventoryCommands has been enabled! &7Version: " + version));
+        Bukkit.getConsoleSender().sendMessage(MessageUtils.getComponent(PREFIX + "&aInventoryCommands has been enabled! &7Version: " + version));
     }
 
     @Override
     public void onDisable() {
-        Bukkit.getConsoleSender().sendMessage(MessageUtils.getComponent(prefix + "&cInventoryCommands has been disabled!"));
+        Bukkit.getConsoleSender().sendMessage(MessageUtils.getComponent(PREFIX + "&cInventoryCommands has been disabled!"));
     }
 
     private void registerCommands() {
 
-        // /craftingtable
-
         PluginUtils.registerCommand("craftingtable", new CraftingTableCommand(), this);
-
-        // /enderchest
 
         PluginUtils.registerCommand("enderchest", new EnderChestCommand(), this);
 
-        // /invsee
-
         PluginUtils.registerCommand("invsee", new InvSeeCommand(), this);
 
-        // /trash
-
         PluginUtils.registerCommand("trash", new TrashCommand(), this);
-
-        // /anvil
 
         PluginUtils.registerCommand("anvil", new AnvilCommand(), this);
 
     }
 
     public String getPrefix() {
-        return prefix;
+        return PREFIX;
     }
 
 }
