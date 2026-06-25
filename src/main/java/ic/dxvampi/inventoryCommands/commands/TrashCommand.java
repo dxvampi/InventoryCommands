@@ -19,6 +19,12 @@ public class TrashCommand implements CommandExecutor, TabCompleter {
             CommandErrors.raiseConsoleError(sender, label);
             return true;
         }
+
+        if (args.length != 0) {
+            CommandErrors.raiseInvalidUsage(sender, label, args, "/" + label);
+            return true;
+        }
+
         Inventory trashInventory = Bukkit.createInventory(null, 45, "Trashcan");
         p.openInventory(trashInventory);
         return true;

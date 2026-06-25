@@ -22,7 +22,7 @@ public final class InventoryCommands extends JavaPlugin {
 
     @Override
     public void onDisable() {
-        assert true;
+        Bukkit.getConsoleSender().sendMessage(MessageUtils.getColored("&cInventoryCommands has been disabled!"));
     }
 
     private void registerCommands() {
