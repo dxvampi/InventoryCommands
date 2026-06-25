@@ -1,6 +1,7 @@
 package ic.dxvampi.inventoryCommands.commands;
 
 import ic.dxvampi.inventoryCommands.commands.base.CommandErrors;
+import net.kyori.adventure.text.Component;
 import org.bukkit.Bukkit;
 import org.bukkit.command.Command;
 import org.bukkit.command.CommandExecutor;
@@ -25,7 +26,7 @@ public class TrashCommand implements CommandExecutor, TabCompleter {
             return true;
         }
 
-        Inventory trashInventory = Bukkit.createInventory(null, 45, "Trashcan");
+        Inventory trashInventory = Bukkit.createInventory(null, 45, Component.text("Trash"));
         p.openInventory(trashInventory);
         return true;
     }

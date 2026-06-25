@@ -2,6 +2,56 @@ name: InventoryCommands
 version: '${version}'
 
 main: ic.dxvampi.inventoryCommands.InventoryCommands
-paperPluginLoader: ic.dxvampi.inventoryCommands.InventoryCommandsLoader
 api-version: '1.18'
 load: POSTWORLD
+
+commands:
+
+  craftingtable:
+    permission: inventorycommands.craftingtable
+    aliases:
+      - craft
+      - ct
+      - workbench
+      - wb
+
+  enderchest:
+    permission: inventorycommands.enderchest
+    aliases:
+      - ec
+
+  invsee:
+    permission: inventorycommands.invsee
+    aliases:
+      - inventorysee
+
+  trash:
+    permission: inventorycommands.trash
+    aliases:
+      - dispose
+      - garbage
+
+permissions:
+
+  # /craftingtable
+
+  inventorycommands.craftingtable:
+    default: op
+
+  # /enderchest
+
+  inventorycommands.enderchest:
+    default: op
+
+  inventorycommands.enderchest.others:
+    default: op
+
+  # /invsee
+
+  inventorycommands.invsee:
+    default: op
+
+  # /trash
+
+  inventorycommands.trash:
+    default: op

@@ -11,7 +11,6 @@ import org.checkerframework.checker.nullness.qual.NonNull;
 import java.util.List;
 
 public class CraftingTableCommand implements CommandExecutor, TabCompleter {
-
     @Override
     public boolean onCommand(@NonNull CommandSender sender, @NonNull Command command, @NonNull String label, String @NonNull [] args) {
         if(!(sender instanceof Player p)) {
