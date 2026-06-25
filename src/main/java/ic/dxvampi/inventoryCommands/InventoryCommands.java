@@ -6,8 +6,6 @@ import ic.dxvampi.inventoryCommands.utils.PluginUtils;
 import org.bukkit.Bukkit;
 import org.bukkit.plugin.java.JavaPlugin;
 
-import java.util.Objects;
-
 public final class InventoryCommands extends JavaPlugin {
 
     private final String version = getDescription().getVersion();
