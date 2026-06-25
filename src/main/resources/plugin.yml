@@ -11,6 +11,8 @@ commands:
     aliases:
       - craft
       - ct
+      - workbench
+      - wb
 
   enderchest:
     permission: inventorycommands.enderchest
