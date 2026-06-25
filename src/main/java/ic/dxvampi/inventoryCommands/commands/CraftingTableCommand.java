@@ -1,5 +1,6 @@
 package ic.dxvampi.inventoryCommands.commands;
 
+import ic.dxvampi.inventoryCommands.commands.base.BaseCommand;
 import ic.dxvampi.inventoryCommands.commands.base.CommandErrors;
 import org.bukkit.command.Command;
 import org.bukkit.command.CommandExecutor;
@@ -10,25 +11,16 @@ import org.jetbrains.annotations.NotNull;
 
 import java.util.List;
 
-public class CraftingTableCommand implements CommandExecutor, TabCompleter {
-    @Override
-    public boolean onCommand(@NotNull CommandSender sender, @NotNull Command command, @NotNull String label, String @NotNull [] args) {
-        if(!(sender instanceof Player p)) {
-            CommandErrors.raiseConsoleError(sender, label);
-            return true;
-        }
+public class CraftingTableCommand extends BaseCommand {
 
+    @Override
+    protected boolean execute(CommandSender sender, Player player, String label, String[] args) {
         if (args.length != 0) {
             CommandErrors.raiseInvalidUsage(sender, label, args, "/" + label);
             return true;
         }
 
-        p.openWorkbench(null, true);
+        player.openWorkbench(null, true);
         return true;
-    }
-
-    @Override
-    public List<String> onTabComplete(@NotNull CommandSender sender, @NotNull Command command, @NotNull String label, String @NotNull [] args) {
-        return List.of();
     }
 }

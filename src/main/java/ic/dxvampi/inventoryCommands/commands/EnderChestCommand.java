@@ -1,25 +1,20 @@
 package ic.dxvampi.inventoryCommands.commands;
 
+import ic.dxvampi.inventoryCommands.commands.base.BaseCommand;
 import ic.dxvampi.inventoryCommands.commands.base.CommandErrors;
 import org.bukkit.Bukkit;
 import org.bukkit.command.Command;
-import org.bukkit.command.CommandExecutor;
 import org.bukkit.command.CommandSender;
-import org.bukkit.command.TabCompleter;
 import org.bukkit.entity.Player;
 import org.jetbrains.annotations.NotNull;
 
 import java.util.ArrayList;
 import java.util.List;
 
-public class EnderChestCommand implements CommandExecutor, TabCompleter {
+public class EnderChestCommand extends BaseCommand {
 
     @Override
-    public boolean onCommand(@NotNull CommandSender sender, @NotNull Command command, @NotNull String label, String @NotNull [] args) {
-        if (!(sender instanceof Player p)) {
-            CommandErrors.raiseConsoleError(sender, label);
-            return true;
-        }
+    protected boolean execute(CommandSender sender, Player player, String label, String[] args) {
 
         if (args.length > 1) {
             CommandErrors.raiseInvalidUsage(sender, label, args, "/" + label + " OPTIONAL:<player>");
@@ -27,7 +22,7 @@ public class EnderChestCommand implements CommandExecutor, TabCompleter {
         }
 
         if (args.length == 0) {
-            p.openInventory(p.getEnderChest());
+            player.openInventory(player.getEnderChest());
             return true;
         }
 
@@ -42,7 +37,7 @@ public class EnderChestCommand implements CommandExecutor, TabCompleter {
             return true;
         }
 
-        p.openInventory(target.getEnderChest());
+        player.openInventory(target.getEnderChest());
         return true;
     }
 

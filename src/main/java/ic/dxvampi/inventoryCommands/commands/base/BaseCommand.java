@@ -17,10 +17,10 @@ public abstract class BaseCommand implements CommandExecutor, TabCompleter {
             CommandErrors.raiseConsoleError(sender, label);
             return true;
         }
-        return execute(p, label, args);
+        return execute(sender, p, label, args);
     }
 
-    protected abstract boolean execute(Player player, String label, String[] args);
+    protected abstract boolean execute(CommandSender sender, Player player, String label, String[] args);
 
     @Override
     public @Nullable List<String> onTabComplete(@NotNull CommandSender sender, @NotNull Command command, @NotNull String label, @NotNull String[] args) {
