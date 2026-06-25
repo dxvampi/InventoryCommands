@@ -1,4 +1,4 @@
-name: Inventory Commands
+name: InventoryCommands
 version: '${version}'
 
 main: ic.dxvampi.inventoryCommands.InventoryCommands
