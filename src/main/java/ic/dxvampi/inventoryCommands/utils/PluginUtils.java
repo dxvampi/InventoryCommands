@@ -15,7 +15,7 @@ public class PluginUtils {
                 if (executor instanceof TabCompleter tc) {
                     cmd.setTabCompleter(tc);
                 }
-                Bukkit.getConsoleSender().sendMessage(MessageUtils.getColored(plugin.getPrefix() + "&aCommand '" + command + "' is disabled!"));
+                Bukkit.getConsoleSender().sendMessage(MessageUtils.getColored(plugin.getPrefix() + "&aCommand '" + command + "' is enabled!"));
             } else {
                 Bukkit.getConsoleSender().sendMessage(MessageUtils.getColored(plugin.getPrefix() + "&cCommand '" + command + "' specified on config.yml does not exist!"));
             }
