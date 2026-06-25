@@ -17,7 +17,7 @@ public final class InventoryCommands extends JavaPlugin {
     public void onEnable() {
         saveDefaultConfig();
         registerCommands();
-        updateChecker.checkForUpdates();
+        if (getConfig().getBoolean("update-check", true)) updateChecker.checkForUpdates();
         Bukkit.getConsoleSender().sendMessage(MessageUtils.getComponent(PREFIX + "&aInventoryCommands has been enabled! &7Version: " + version));
     }
 
@@ -34,7 +34,7 @@ public final class InventoryCommands extends JavaPlugin {
 
         PluginUtils.registerCommand("invsee", new InvSeeCommand(), this);
 
-        PluginUtils.registerCommand("trash", new TrashCommand(), this);
+        PluginUtils.registerCommand("trash", new TrashCommand(this), this);
 
         PluginUtils.registerCommand("anvil", new AnvilCommand(), this);
 
