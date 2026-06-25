@@ -1,6 +1,7 @@
 package ic.dxvampi.inventoryCommands.utils;
 
 import ic.dxvampi.inventoryCommands.InventoryCommands;
+import org.bukkit.Bukkit;
 import org.bukkit.command.CommandExecutor;
 import org.bukkit.command.TabCompleter;
 
@@ -14,8 +15,9 @@ public class PluginUtils {
                 if (executor instanceof TabCompleter tc) {
                     cmd.setTabCompleter(tc);
                 }
+                Bukkit.getConsoleSender().sendMessage(MessageUtils.getColored(plugin.getPrefix() + "&aCommand '" + command + "' is disabled!"));
             } else {
-                plugin.getLogger().warning("Command '" + command + "' specified on config.yml does not exist!");
+                Bukkit.getConsoleSender().sendMessage(MessageUtils.getColored(plugin.getPrefix() + "&cCommand '" + command + "' specified on config.yml does not exist!"));
             }
 
         } else {
@@ -23,7 +25,9 @@ public class PluginUtils {
             var cmd = commandMap.getCommand(command);
             if (cmd != null) {
                 cmd.unregister(commandMap);
-                plugin.getLogger().info("Unregistered command '" + command + "'");
+                Bukkit.getConsoleSender().sendMessage(MessageUtils.getColored(plugin.getPrefix() + "&cCommand '" + command + "' is disabled!"));
+            } else {
+                Bukkit.getConsoleSender().sendMessage(MessageUtils.getColored(plugin.getPrefix() + "&cCommand '" + command + "' specified on config.yml does not exist!"));
             }
         }
     }
