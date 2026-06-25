@@ -1,1 +1,1 @@
-rootProject.name = "Inventory Commands"
+rootProject.name = "InventoryCommands"

@@ -1,5 +1,8 @@
 name: InventoryCommands
 version: '${version}'
+description: "Lightweight plugin providing inventory-related useful commands"
+authors: [dxvampi]
+website: "https://modrinth.com/plugin/inventorycommands"
 
 main: ic.dxvampi.inventoryCommands.InventoryCommands
 api-version: '1.18'
@@ -8,6 +11,8 @@ load: POSTWORLD
 commands:
 
   craftingtable:
+    description: "Opens a virtual crafting table"
+    usage: "/<command>"
     permission: inventorycommands.craftingtable
     aliases:
       - craft
@@ -16,50 +21,82 @@ commands:
       - wb
 
   enderchest:
+    description: "Opens an ender chest"
+    usage: "/<command> <player>"
     permission: inventorycommands.enderchest
     aliases:
       - ec
 
   invsee:
+    description: "Allows to interact with other people's inventories"
+    usage: "/<command> <player>"
     permission: inventorycommands.invsee
     aliases:
       - inventorysee
 
   trash:
+    description: "Opens a temporal inventory to dispose items in"
+    usage: "/<command>"
     permission: inventorycommands.trash
     aliases:
       - dispose
       - garbage
 
   anvil:
+    description: "Opens a virtual anvil"
+    usage: "/<command>"
     permission: inventorycommands.anvil
+
+  inventorycommands:
+    description: "Main command"
+    usage: "/<command> <reload>"
+    permission: inventorycommands.maincommand
+    aliases:
+      - invcmd
+      - invcmds
 
 permissions:
 
   # /craftingtable
 
   inventorycommands.craftingtable:
+    description: "Allows opening crafting table"
     default: op
 
   # /enderchest
 
   inventorycommands.enderchest:
+    description: "Allows opening ender chest"
     default: op
 
   inventorycommands.enderchest.others:
+    description: "Allows opening other players' ender chest"
     default: op
 
   # /invsee
 
   inventorycommands.invsee:
+    description: "Allows seeing other players' inventory"
     default: op
 
   # /trash
 
   inventorycommands.trash:
+    description: "Allows using /trash"
     default: op
 
   # /anvil
 
   inventorycommands.anvil:
+    description: "Allows opening an anvil"
+    default: op
+
+  # /inventorycommands
+
+  inventorycommands.maincommand:
+    description: "Allows running /inventorycommands"
+    default: op
+
+  inventorycommand.maincommand.reload:
+    description: "Allows reloading the config"
     default: op
