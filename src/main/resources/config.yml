@@ -4,3 +4,8 @@ commands: # Here you can disable commands that you don't want to use
   invsee: true
   trash: true
   anvil: true
+
+trash-gui:
+  rows: 5 # How many rows the trash GUI has
+
+update-check: true
