@@ -3,17 +3,20 @@ package ic.dxvampi.inventoryCommands;
 import ic.dxvampi.inventoryCommands.commands.*;
 import ic.dxvampi.inventoryCommands.utils.MessageUtils;
 import ic.dxvampi.inventoryCommands.utils.PluginUtils;
+import ic.dxvampi.inventoryCommands.utils.UpdateChecker;
 import org.bukkit.Bukkit;
 import org.bukkit.plugin.java.JavaPlugin;
 
 public final class InventoryCommands extends JavaPlugin {
 
     private final String version = getDescription().getVersion();
+    private final UpdateChecker updateChecker = new UpdateChecker(this);
 
     @Override
     public void onEnable() {
         saveDefaultConfig();
         registerCommands();
+        updateChecker.checkForUpdates();
         Bukkit.getConsoleSender().sendMessage(MessageUtils.getColored("&aInventoryCommands has been enabled! &7Version: " + version));
     }
 
