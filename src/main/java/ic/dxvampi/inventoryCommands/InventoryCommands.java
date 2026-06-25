@@ -2,6 +2,7 @@ package ic.dxvampi.inventoryCommands;
 
 import ic.dxvampi.inventoryCommands.commands.CraftingTableCommand;
 import ic.dxvampi.inventoryCommands.commands.EnderChestCommand;
+import ic.dxvampi.inventoryCommands.commands.InvSeeCommand;
 import ic.dxvampi.inventoryCommands.utils.MessageUtils;
 import org.bukkit.Bukkit;
 import org.bukkit.plugin.java.JavaPlugin;
@@ -36,5 +37,11 @@ public final class InventoryCommands extends JavaPlugin {
         EnderChestCommand enderChestCommand = new EnderChestCommand();
         Objects.requireNonNull(this.getCommand("enderchest")).setExecutor(enderChestCommand);
         Objects.requireNonNull(this.getCommand("enderchest")).setTabCompleter(enderChestCommand);
+
+        // /invsee
+
+        InvSeeCommand invSeeCommand = new InvSeeCommand();
+        Objects.requireNonNull(this.getCommand("invsee")).setExecutor(invSeeCommand);
+        Objects.requireNonNull(this.getCommand("invsee")).setTabCompleter(invSeeCommand);
     }
 }
