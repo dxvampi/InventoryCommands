@@ -25,8 +25,6 @@ public class PluginUtils {
                 cmd.unregister(commandMap);
                 plugin.getLogger().info("Unregistered command '" + command + "'");
             }
-
         }
     }
-
 }

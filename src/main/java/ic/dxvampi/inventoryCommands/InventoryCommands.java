@@ -1,6 +1,7 @@
 package ic.dxvampi.inventoryCommands;
 
 import ic.dxvampi.inventoryCommands.commands.*;
+import ic.dxvampi.inventoryCommands.events.CommandTabListener;
 import ic.dxvampi.inventoryCommands.utils.MessageUtils;
 import ic.dxvampi.inventoryCommands.utils.PluginUtils;
 import org.bukkit.Bukkit;
@@ -44,5 +45,9 @@ public final class InventoryCommands extends JavaPlugin {
 
         PluginUtils.registerCommand("anvil", new AnvilCommand(), this);
 
+    }
+
+    private void registerListeners() {
+        getServer().getPluginManager().registerEvents(new CommandTabListener(this), this);
     }
 }
