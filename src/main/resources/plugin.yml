@@ -31,6 +31,9 @@ commands:
       - dispose
       - garbage
 
+  anvil:
+    permission: inventorycommands.anvil
+
 permissions:
 
   # /craftingtable
@@ -54,4 +57,9 @@ permissions:
   # /trash
 
   inventorycommands.trash:
+    default: op
+
+  # /anvil
+
+  inventorycommands.anvil:
     default: op
