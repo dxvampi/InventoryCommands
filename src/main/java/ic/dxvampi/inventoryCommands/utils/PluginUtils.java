@@ -11,14 +11,21 @@ public class PluginUtils {
             var cmd = plugin.getCommand(command);
             if (cmd != null) {
                 cmd.setExecutor(executor);
-
                 if (executor instanceof TabCompleter tc) {
                     cmd.setTabCompleter(tc);
                 }
-
             } else {
-                plugin.getLogger().warning("The command '" + command + "' was not found on 'plugin.yml'! Please add it! Defaulting to enabled");
+                plugin.getLogger().warning("Command '" + command + "' specified on config.yml does not exist!");
             }
+
+        } else {
+            var commandMap = plugin.getServer().getCommandMap();
+            var cmd = commandMap.getCommand(command);
+            if (cmd != null) {
+                cmd.unregister(commandMap);
+                plugin.getLogger().info("Unregistered command '" + command + "'");
+            }
+
         }
     }
 
