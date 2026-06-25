@@ -7,6 +7,8 @@ import org.bukkit.command.TabCompleter;
 
 public class PluginUtils {
 
+    private PluginUtils() {}
+
     public static void registerCommand(String command, CommandExecutor executor, InventoryCommands plugin) {
         if (plugin.getConfig().getBoolean("commands." + command, true)) {
             var cmd = plugin.getCommand(command);
