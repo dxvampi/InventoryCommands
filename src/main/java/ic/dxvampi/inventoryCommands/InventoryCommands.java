@@ -46,6 +46,7 @@ public final class InventoryCommands extends JavaPlugin {
 
         PluginUtils.registerCommand("inventorycommands", new MainCommand(this), this);
 
+        PluginUtils.registerCommand("stonecutter", new StonecutterCommand(), this);
     }
 
     public String getPrefix() {

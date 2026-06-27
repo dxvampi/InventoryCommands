@@ -47,6 +47,13 @@ commands:
     usage: "/<command>"
     permission: inventorycommands.anvil
 
+  stonecutter:
+    description: "Open a virtual stonecutter"
+    usage: "<command>"
+    permission: inventorycommands.stonecutter
+    aliases:
+      - sc
+
   inventorycommands:
     description: "Main command"
     usage: "/<command> <reload>"
@@ -89,6 +96,12 @@ permissions:
 
   inventorycommands.anvil:
     description: "Allows opening an anvil"
+    default: op
+
+  # /stonecutter
+
+  inventorycommands.stonecutter:
+    description: "Allows using /stonecutter"
     default: op
 
   # /inventorycommands
