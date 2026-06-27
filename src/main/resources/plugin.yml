@@ -104,6 +104,12 @@ permissions:
     description: "Allows using /stonecutter"
     default: op
 
+  # /loom
+
+  inventorycommands.loom:
+    description: "Allows using /loom"
+    default: op
+
   # /inventorycommands
 
   inventorycommands.maincommand:
