@@ -54,6 +54,11 @@ commands:
     aliases:
       - sc
 
+  loom:
+    description: "Opens a virtual loom"
+    usage: "<command>"
+    permission: inventorycommands.loom
+
   inventorycommands:
     description: "Main command"
     usage: "/<command> <reload>"
