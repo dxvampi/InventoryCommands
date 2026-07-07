@@ -32,7 +32,7 @@ This plugin provides access to specific inventories. Here is how each command wo
 * **Description:** Opens the loom GUI.
 
 ### `/stonecutter`
-* **Aliases:** `/dispose`, `/garbage`
+* **Aliases:** `/sc`
 * **Description:** Opens the stonecutter GUI. Useful for not having to craft that ugly block
 ---
 
