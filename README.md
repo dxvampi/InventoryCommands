@@ -1,6 +1,7 @@
 # InventoryCommands
 
 [![InventoryCommands](https://api.mcbanners.com/banner/resource/hangar/InventoryCommands/banner.png?background__template=BURNING_ORANGE)](https://hangar.papermc.io/dxvampi/InventoryCommands)
+
 [![InventoryCommands](https://img.shields.io/hangar/dt/InventoryCommands?link=https%3A%2F%2Fhangar.papermc.io%2Fdxvampi%2FInventoryCommands&style=for-the-badge)](https://hangar.papermc.io/dxvampi/InventoryCommands)
 [![InventoryCommands](https://img.shields.io/hangar/views/InventoryCommands?link=https%3A%2F%2Fhangar.papermc.io%2Fdxvampi%2FInventoryCommands&style=for-the-badge)](https://hangar.papermc.io/dxvampi/InventoryCommands)
 
