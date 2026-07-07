@@ -27,6 +27,13 @@ This plugin provides access to specific inventories. Here is how each command wo
 
 ### `/anvil`
 * **Description:** Opens the anvil GUI. Useful for enchanting or renaming items on the go
+
+### `/loom`
+* **Description:** Opens the loom GUI.
+
+### `/stonecutter`
+* **Aliases:** `/dispose`, `/garbage`
+* **Description:** Opens the stonecutter GUI. Useful for not having to craft that ugly block
 ---
 
 ## Permissions
