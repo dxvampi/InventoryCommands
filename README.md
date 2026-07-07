@@ -49,7 +49,7 @@ All permissions default to **OP**, keeping your server secure. Give these to you
 | `/trash`               | `inventorycommands.trash`             | OP      | Allows the player to open the virtual trash bin.                   | 1.0+    | 
 | `/anvil`               | `inventorycommands.anvil`             | OP      | Allows the player to open the anvil GUI                            | 1.1+    |
 | `/loom`                | `inventorycommands.loom`              | OP      | Allows the player to open the loom GUI                             | 1.3+    |
-| `/stonecutter`         | `inventorycommands.stonecutter        | OP      | Allows the player to open the stonecutter GUI                      | 1.3+    |
+| `/stonecutter`         | `inventorycommands.stonecutter`       | OP      | Allows the player to open the stonecutter GUI                      | 1.3+    |
 ---
 
 ## Installation
