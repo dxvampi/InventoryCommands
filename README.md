@@ -1,5 +1,9 @@
 # InventoryCommands
 
+[![InventoryCommands](https://api.mcbanners.com/banner/resource/hangar/InventoryCommands/banner.png?background__template=BURNING_ORANGE)](https://hangar.papermc.io/dxvampi/InventoryCommands)
+[![InventoryCommands](https://img.shields.io/hangar/dt/InventoryCommands?link=https%3A%2F%2Fhangar.papermc.io%2Fdxvampi%2FInventoryCommands&style=for-the-badge)](https://hangar.papermc.io/dxvampi/InventoryCommands)
+[![InventoryCommands](https://img.shields.io/hangar/views/InventoryCommands?link=https%3A%2F%2Fhangar.papermc.io%2Fdxvampi%2FInventoryCommands&style=for-the-badge)](https://hangar.papermc.io/dxvampi/InventoryCommands)
+
 **Are you tired of adding straight up bloatware to your server just to have some basic utilities?** Yeah, looking at you, EssentialsX. Why install a massive, heavy plugin with a ton of features you'll never use, just so your players can type `/craft`?
 
 **InventoryCommands** is a lightweight, no-config, bloat-free plugin that adds exactly what the name suggests: useful, everyday inventory related commands. Nothing more, nothing less.
